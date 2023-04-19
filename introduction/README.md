@@ -15,10 +15,10 @@
 
 ## 3. Conditional Statements: if, elif, and else
 
-Looping: for and while Loops
-Loop Control: break and continue
-List Comprehensions
-Functions and Modules
+- Looping: for and while Loops
+- Loop Control: break and continue
+- List Comprehensions
+- Functions and Modules
 
 ## 4. Defining Functions
 
@@ -39,4 +39,4 @@ Functions and Modules
 - String Basics
 - String Formatting
 - Common String Methods
-- Regular Expressions
+- Regular Expressionss
