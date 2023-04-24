@@ -25,7 +25,8 @@
 
 These are just a few examples of services or gigs you can offer as a Python developer on freelancing websites. You can also specialize in a particular domain, such as finance, healthcare, or e-commerce, and offer services related to that domain using Python.
 
-python```
+``` python
+
 +--------------------+----+---------+------------+----------+------+------------+-----+------+
 |                 Car| MPG|Cylinders|Displacement|Horsepower|Weight|Acceleration|Model|Origin|
 +--------------------+----+---------+------------+----------+------+------------+-----+------+
@@ -35,4 +36,5 @@ python```
 |       AMC Rebel SST|16.0|        8|       304.0|     150.0| 3433.|        12.0|   70|    US|
 |         Ford Torino|17.0|        8|       302.0|     140.0| 3449.|        10.5|   70|    US|
 +--------------------+----+---------+------------+----------+------+------------+-----+------+
+
 ```
