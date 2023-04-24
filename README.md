@@ -12,7 +12,7 @@
 - Web Development: You can offer web development services using Python frameworks like Django or Flask.
 
 - Data Analysis and Visualization: You can offer data analysis and visualization services using Python libraries like Pandas, Numpy, and Matplotlib.
-### example dataframe
+
 ``` python
 
 +--------------------+----+---------+------------+----------+------+------------+-----+------+
