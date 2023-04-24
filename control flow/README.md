@@ -1,4 +1,4 @@
-# Introduction to Essential Python Concepts and Practice
+# Control Flow and Essential Python Concepts and Practice
 
 Description: In this exercise, students will learn and practice using fundamental Python concepts such as if, else, for, in, the len() function, the enumerate() function, list indexing, and working with lists and strings in various contexts. These concepts form the foundation of Python programming and are essential for manipulating data structures and controlling program flow.
 
