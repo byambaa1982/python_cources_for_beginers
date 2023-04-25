@@ -7,7 +7,23 @@ Description: In this exercise, students will learn and practice using fundamenta
 By the end of this exercise, students will be able to:
 
 1. Understand and use conditional statements (if, else) to control program flow based on specific conditions.
+```python
+
+for number in range(1, 6):
+    if number % 2 == 0:
+        print(f"{number} is even.")
+    else:
+        print(f"{number} is odd.")
+        
+```
 2. Understand and use for loops to iterate through data structures like lists and strings.
+
+```python
+# Use enumerate() to iterate through the list along with the index
+for index, fruit in enumerate(fruits):
+    # The index starts at 0, so we add 1 to get the correct position
+    print(f"{index + 1}. {fruit}")
+```
 3. Understand and use the in keyword to check for the presence of an element in a list or substring in a string.
 4. Understand and use the len() function to determine the length of a list or string.
 5. Understand and use the enumerate() function to iterate through a list or string with the element's index.
