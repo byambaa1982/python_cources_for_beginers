@@ -34,14 +34,14 @@ for index, fruit in enumerate(fruits):
 
 1. Conditional statements (if, else): These statements allow students to make decisions in their code based on specific conditions and execute different code blocks accordingly.
 
-2. for loops: These loops enable students to iterate through elements of data structures like lists and strings, making it easier to perform operations on each element.
+2. `for loops`: These loops enable students to iterate through elements of data structures like lists and strings, making it easier to perform operations on each element.
 
-3. in keyword: This keyword allows students to check for the presence of an element in a list or substring in a string, which is useful when filtering or searching data.
+3. `in` keyword: This keyword allows students to check for the presence of an element in a list or substring in a string, which is useful when filtering or searching data.
 
-4. len() function: This built-in Python function returns the number of items in a list or characters in a string, allowing students to find the length of data structures and perform operations based on their size.
+4. `len()` function: This built-in Python function returns the number of items in a list or characters in a string, allowing students to find the length of data structures and perform operations based on their size.
 
-5. enumerate() function: This built-in Python function allows students to iterate through a list or string while simultaneously accessing both the element's index and its value. This is particularly useful when performing operations that depend on the position of an element in the data structure.
+5. `enumerate()` function: This built-in Python function allows students to iterate through a list or string while simultaneously accessing both the element's index and its value. This is particularly useful when performing operations that depend on the position of an element in the data structure.
 
 6. List indexing: List indexing is a fundamental concept in Python that allows students to access individual elements in a list or characters in a string using their positions.
 
-7. Working with lists and strings: Students will practice various operations with lists and strings, such as string manipulation, concatenation, and formatting using the print() function. These skills are essential for processing and presenting data in Python.
+7. Working with lists and strings: Students will practice various operations with lists and strings, such as string manipulation, concatenation, and formatting using the `print()` function. These skills are essential for processing and presenting data in Python.
