@@ -8,6 +8,12 @@
 - Parameters and return statements
 - Example: Basic function to add two numbers
 
+```python
+def add_numbers(a, b):
+    result = a + b
+    return result
+```
+
 ## 2. Working with strings in functions
 
 - Example: Function to concatenate two strings
@@ -29,6 +35,20 @@
 - If-else statements
 - Example: Function to count even and odd numbers in a list
 
+```python
+def count_even_odd_numbers(numbers):
+    even_count = 0
+    odd_count = 0
+
+    for number in numbers:
+        if number % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+
+    return even_count, odd_count
+
+```
 
 ## After completing this class, students will know:
 
