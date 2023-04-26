@@ -27,6 +27,13 @@ def add_numbers(a, b):
 - Convert temperature between Celsius and Fahrenheit
 - Calculate the area of a rectangle
 
+```python
+def multiply_numbers(a, b):
+    # Your code here
+
+# Test your function
+print(multiply_numbers(3, 4))  # Output: 12
+```
 ## 4. Solutions and explanations for the homework assignment
 
 ## 5. Introduction to control structures in Python
