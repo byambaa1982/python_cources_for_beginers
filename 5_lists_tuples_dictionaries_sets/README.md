@@ -21,3 +21,11 @@
 - How to use for loops to iterate over lists and tuples.
 - How to use conditional statements (if, else) inside for loops to filter or modify elements based on certain conditions.
 By completing these exercises, students will have a solid foundation in working with lists and tuples in Python, as well as a better understanding of how to use control structures and conditional statements. These skills are essential for many programming tasks, including data processing, analysis, and manipulation.
+
+## 4. Dictionaries:
+
+- How to create dictionaries using curly braces and the dict() constructor.
+- How to access values in a dictionary using their corresponding keys.
+- How to modify values in a dictionary by updating their keys with new values.
+- How to add new key-value pairs to a dictionary.
+- How to check if a key exists in a dictionary using the in keyword.
