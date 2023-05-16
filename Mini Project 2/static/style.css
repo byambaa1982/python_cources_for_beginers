@@ -27,5 +27,13 @@ input[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
 }
+div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 
 
