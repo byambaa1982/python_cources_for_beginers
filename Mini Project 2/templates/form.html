@@ -10,9 +10,9 @@
             <input type="text" id="text" name="text"><br>
             <input type="submit" value="Submit">
         </form>
+        <div><h3>Result: </h3></div>
         {% if message %}
         <div id="result">
-            <h2>Submitted Text (in lowercase):</h2>
             <p>{{ message }}</p>
         </div>
         {% endif %}
