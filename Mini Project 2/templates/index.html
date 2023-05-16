@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Submit Text</title>
+        <title>Hello, World!</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <form method="POST">
-            <label for="text">Enter your text:</label><br>
-            <input type="text" id="text" name="text"><br>
-            <input type="submit" value="Submit">
-        </form>
+        <h1>{{ message }}</h1>
     </body>
 </html>
 
