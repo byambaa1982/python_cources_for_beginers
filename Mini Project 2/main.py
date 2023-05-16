@@ -7,10 +7,11 @@ def hello_world():
 
 @app.route('/form', methods=['GET', 'POST'])
 def render_form():
+    message = ''
     if request.method == 'POST':
         text = request.form.get('text')
-        return render_template('index.html', message=text.lower())
-    return render_template('form.html')
+        message = text.lower()
+    return render_template('form.html', message=message)
 
 if __name__ == '__main__':
     app.run(debug=True)
