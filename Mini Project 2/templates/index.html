@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hello, World!</title>
+        <title>Submit Text</title>
     </head>
     <body>
-        <h1>{{ message }}</h1>
+        <form method="POST">
+            <label for="text">Enter your text:</label><br>
+            <input type="text" id="text" name="text"><br>
+            <input type="submit" value="Submit">
+        </form>
     </body>
 </html>
+
