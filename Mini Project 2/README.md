@@ -12,7 +12,7 @@ Students will be tasked to create a simple "Hello, World!" web application using
 
 2. `Web Development Basics`: Students will learn the basics of web development, including how web servers work, how HTTP requests are handled, and the request-response cycle. They will understand the basic structure of a web application.
 
-3.` Flask Framework`: Students will get a hands-on introduction to Flask. They will learn how to create routes and view functions in Flask, how to run a Flask application, and understand the purpose of the if __name__ == '__main__': block.
+3. `Flask Framework`: Students will get a hands-on introduction to Flask. They will learn how to create routes and view functions in Flask, how to run a Flask application, and understand the purpose of the if __name__ == '__main__': block.
 
 4. `Project Management`: By creating a requirements.txt file, students will learn the importance of managing project dependencies and how to use them to ensure that their code can run in different environments.
 
