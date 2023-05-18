@@ -24,11 +24,12 @@ This repository is unique in its ease of accessibility and use. All of the chapt
 ## How to Use
 
 1. Open the desired chapter in this repo.
-![alt text](/images/colab_sign.png "colab")
-2. Click on the exercise notebook link. It'll open up in Google Colab.
+2. Click on the exercise notebook link. It'll open up in Google Colab when you hit the `Open in Colab` sign.
 3. After going through the concepts, start working on the exercises.
 4. If you're stuck, take a peek at the corresponding solution notebook.
 4. Repeat with the next chapter once you're comfortable with the current one!
+
+![alt text](/images/colab_sign.png "colab")
 
 It's as simple as that! It's time to stop thinking and start doing. Dive into the chapters and begin your Python journey right now.
 
