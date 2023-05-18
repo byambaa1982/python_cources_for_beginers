@@ -24,6 +24,7 @@ This repository is unique in its ease of accessibility and use. All of the chapt
 ## How to Use
 
 1. Open the desired chapter in this repo.
+![alt text](/images/colab_sign.png "colab")
 2. Click on the exercise notebook link. It'll open up in Google Colab.
 3. After going through the concepts, start working on the exercises.
 4. If you're stuck, take a peek at the corresponding solution notebook.
