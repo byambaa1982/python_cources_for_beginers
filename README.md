@@ -29,7 +29,7 @@ This repository is unique in its ease of accessibility and use. All of the chapt
 4. If you're stuck, take a peek at the corresponding solution notebook.
 4. Repeat with the next chapter once you're comfortable with the current one!
 
-![alt text](/images/colab_sign.png "colab")
+![alt text](/images/colab_small.png "colab")
 
 It's as simple as that! It's time to stop thinking and start doing. Dive into the chapters and begin your Python journey right now.
 
