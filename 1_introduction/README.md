@@ -2,7 +2,7 @@
 
 ## 1. Why Python?
 
-- Some facts
+- [Learn and Earn](../why_python.md)
 
 ## 2. Variables and Data Types
 
