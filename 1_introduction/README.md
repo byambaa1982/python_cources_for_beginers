@@ -1,10 +1,8 @@
 # Introduction to Python
 
-## 1. Installing Python
+## 1. Why Python?
 
-- Setting Up the Python Environment
-- Your First Python Program
-- Python Basics
+- Some facts
 
 ## 2. Variables and Data Types
 
