@@ -57,4 +57,21 @@ Please replace `Flask==2.0.1` with the version of Flask you are currently using.
 You can run the application locally by using the terminal and typing `python app.py`, assuming you have Python and Flask installed. You should see output telling you that a server is running locally, and you can access it by opening a web browser and navigating to `http://127.0.0.1:5000/` or `http://localhost:5000/`. You should see 'Hello, World!' displayed.
 
 Upon the completion of this project, our Flask application will have the capability to accept user input through a form. This user-submitted text can be processed in three distinct ways, determined by the selection of one of three buttons: transforming the text to all uppercase, converting it to all lowercase, or computing the word count of the input. This interactive functionality will be seamlessly integrated into our application through the use of CSS for styling and HTML for structuring our web pages.
+
+```
+python_cources_for_beginners/
+├── images/
+│   ├── flask_page.png
+└── Mini Project 2/
+    ├── static/
+    │   ├── images/
+    │   │   ├── flask_page.png
+    │   └── style.css
+    ├── templates/
+    │   ├── form.html
+    │   └── index.html
+    └── app.py
+
+```
+
 ![simple web page](../images/flask_page.png)
