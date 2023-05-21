@@ -19,14 +19,13 @@ Students will be tasked to create a simple "Hello, World!" web application using
 5. `Debugging`: By running their application in debug mode, students will learn basic debugging techniques and understand the importance of reading and understanding error messages.
 
 Creating a Flask application usually requires two primary files: an app.py file which will contain your application's code, and a requirements.txt file to list any dependencies your application might have. 
-```
+
 ```
 python_cources_for_beginners/
 └── Mini Project 2/
     ├── requirements.txt
     └── app.py
 
-```
 ```
 In this case, our Flask application will be very basic and will just display a "Hello, World!" message when someone accesses it.
 Here's what those files might look like:
