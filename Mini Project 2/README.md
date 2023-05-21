@@ -18,7 +18,7 @@ Students will be tasked to create a simple "Hello, World!" web application using
 
 5. `Debugging`: By running their application in debug mode, students will learn basic debugging techniques and understand the importance of reading and understanding error messages.
 
-Creating a Flask application usually requires two primary files: an app.py file which will contain your application's code, and a requirements.txt file to list any dependencies your application might have. 
+We start creating a simple Flask application usually requires two primary files: an app.py file which will contain your application's code, and a requirements.txt file to list any dependencies your application might have. 
 
 ```
 python_cources_for_beginners/
@@ -56,4 +56,5 @@ Please replace `Flask==2.0.1` with the version of Flask you are currently using.
 
 You can run the application locally by using the terminal and typing `python app.py`, assuming you have Python and Flask installed. You should see output telling you that a server is running locally, and you can access it by opening a web browser and navigating to `http://127.0.0.1:5000/` or `http://localhost:5000/`. You should see 'Hello, World!' displayed.
 
-![simple web page](../../images/flask_page.png)
+Upon the completion of this project, our Flask application will have the capability to accept user input through a form. This user-submitted text can be processed in three distinct ways, determined by the selection of one of three buttons: transforming the text to all uppercase, converting it to all lowercase, or computing the word count of the input. This interactive functionality will be seamlessly integrated into our application through the use of CSS for styling and HTML for structuring our web pages.
+![simple web page](../images/flask_page.png)
