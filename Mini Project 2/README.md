@@ -56,7 +56,7 @@ Please replace `Flask==2.0.1` with the version of Flask you are currently using.
 
 You can run the application locally by using the terminal and typing `python app.py`, assuming you have Python and Flask installed. You should see output telling you that a server is running locally, and you can access it by opening a web browser and navigating to `http://127.0.0.1:5000/` or `http://localhost:5000/`. You should see 'Hello, World!' displayed.
 
-```{figure} /images/flask_page.png
+```{figure} ../../images/flask_page.png
 :name: simple web page
 web page
 ```
