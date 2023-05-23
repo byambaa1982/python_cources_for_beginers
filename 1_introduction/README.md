@@ -9,7 +9,6 @@
 - Basic Operators and Expressions
 - Input and Output Functions
 - Comments and Docstrings
-- Control Flow
 
 ## 3. Conditional Statements: if, elif, and else
 
