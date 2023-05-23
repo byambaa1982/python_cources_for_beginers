@@ -1,4 +1,4 @@
-Welcome to our comprehensive Python course for beginners. This course is designed to give you a solid foundation in Python, a versatile and widely-used programming language known for its readability and simplicity.
+This chapter is designed to give you a solid foundation in Python, a versatile and widely-used programming language known for its readability and simplicity.
 
 Throughout this course, we will dive deep into core Python data types, namely integers, floating-point numbers (floats), strings, and lists. Each topic will come with clear explanations, practical examples, and a set of exercises for hands-on practice.
 
