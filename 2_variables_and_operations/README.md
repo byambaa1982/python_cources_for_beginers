@@ -5,7 +5,12 @@ Throughout this course, we will dive deep into core Python data types, namely in
 Here's a glimpse of what we will cover:
 
 - `Integers`: You will learn how integers work in Python, which includes basic arithmetic operations like addition, subtraction, multiplication, and division.
-
+```python
+a = 5
+b = 2
+c = a + b
+print(c)  # Outputs: 7
+```
 - `Floats`: We will cover floating-point numbers, which allow you to represent fractional values. You'll learn about mathematical operations with floats, precision issues, and more.
 
 - `Strings`: This course will introduce you to strings, which are used to represent text data in Python. You will learn how to create, manipulate, and analyze strings.
