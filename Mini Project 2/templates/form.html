@@ -6,10 +6,14 @@
     </head>
     <body>
         <form method="POST">
-            <label for="text">Enter your text:</label><br>
+            <a href="{{ url_for('hello_world') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <label for="text"><h1>Enter your text: </h1></label><br>
+            <h4>This app will manipulate text and the back-end is written in flask</h4>
             <input type="text" id="text" name="text"><br>
             <input type="submit" name="submit_button" value="Lowercase">
             <input type="submit" name="submit_button" value="Capital">
+            <input type="submit" name="submit_button" value="Byamba">
             <input type="submit" value="Submit">
         </form>
         <div><h3>Result: </h3></div>

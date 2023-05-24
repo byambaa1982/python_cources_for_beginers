@@ -14,7 +14,13 @@ def render_form():
             message = text.lower()
         elif request.form['submit_button'] == 'Capital':
             message = text.upper()
+        elif request.form['submit_button'] == 'Byamba':
+            message = "Hi Byamba"
     return render_template('form.html', message=message)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
