@@ -5,7 +5,7 @@ Welcome to `Python Cources For Beginners`, a comprehensive Python guide designed
 This repository is unique in its ease of accessibility and use. All of the chapters and exercises are compatible with Google Colab, which means you don't have to worry about any downloads or installations. You can start your Python journey instantly, from anywhere, at any time!
 
 ![alt text](/images/AnastasiaR_artificial_intelligence_mind_unisex_against_the_blac_e72fb188-03e5-4301-9647-62712157f098.png "robot women")
-This is a test run.
+
 
 ## Why This Repo?
 
