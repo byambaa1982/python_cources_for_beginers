@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/second')
 def hello_world():
     return render_template('index.html', message='Hello, World!')
 
@@ -18,7 +18,7 @@ def render_form():
             message = "Hi Byamba"
     return render_template('form.html', message=message)
 
-@app.route('/about')
+@app.route('/')
 def about():
     return render_template('about.html')
 
