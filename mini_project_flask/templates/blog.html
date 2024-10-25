@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog Posts</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div>
+        <h1>Blog Posts</h1>
+        <a href="{{ url_for('hello_world') }}">Home</a>
+        <a href="{{ url_for('submit_post') }}">New Post</a>
+        </div>
+        {% if posts %}
+            {% for post in posts %}
+                <div class="post">
+                    <h2>{{ post.title }}</h2>
+                    <p><strong>Type:</strong> {{ post.type }}</p>
+                    <p>{{ post.content }}</p>
+                    <hr>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No blog posts available.</p>
+        {% endif %}
+    </body>
+</html>

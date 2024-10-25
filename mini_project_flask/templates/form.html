@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Submit Text</title>
+        <title>Submit Post</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <form method="POST">
-            <a href="{{ url_for('hello_world') }}">Home</a>
-            <a href="{{ url_for('about') }}">About</a>
-            <label for="text"><h1>Enter your text: </h1></label><br>
-            <h4>This app will manipulate text and the back-end is written in flask</h4>
-            <input type="text" id="text" name="text"><br>
-            <input type="submit" name="submit_button" value="Lowercase">
-            <input type="submit" name="submit_button" value="Capital">
-            <input type="submit" name="submit_button" value="Byamba">
+        <div>
+        <h1>Create Posts</h1>
+        <a href="{{ url_for('hello_world') }}">Home</a>
+        <a href="{{ url_for('show_blogs') }}">New Post</a>
+
+        <form method="POST" action="{{ url_for('submit_post') }}">
+
+
+            <label for="title"><h1>Title:</h1></label>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="post"><h1>Post:</h1></label>
+            <textarea id="post" name="post" rows="4" cols="50" required></textarea><br>
+
+            <label for="type"><h1>Type:</h1></label>
+            <input type="text" id="type" name="type" required><br>
+
             <input type="submit" value="Submit">
         </form>
-        <div><h3>Result: </h3></div>
+        </div>
+        <div><h3>Result:</h3></div>
         {% if message %}
         <div id="result">
             <p>{{ message }}</p>
