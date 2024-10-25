@@ -73,5 +73,12 @@ def show_blogs():
 
     return render_template('blog.html', posts=formatted_posts)
 
+@app.route('/test')
+def test_db():
+    conn = sqlite3.connect('titanic.sqlite')
+    df = pd.read_sql('SELECT Name, Age FROM titanic', conn)
+    name = df["Name"][0]
+    return f'Hello from Flask! {name}'
+
 if __name__ == '__main__':
     app.run(debug=True)
