@@ -1,4 +1,9 @@
 from flask import Flask, render_template, request
+
+import pandas as pd
+import sqlite3
+
+
 app = Flask(__name__)
 
 @app.route('/second')
@@ -20,7 +25,16 @@ def render_form():
 
 @app.route('/')
 def about():
-    return render_template('about.html')
+    conn = sqlite3.connect('titanic.sqlite')
+    # Read the 'titanic' table into a pandas DataFrame
+    df = pd.read_sql('SELECT Name, Age FROM titanic', conn)
+    name = df["Name"][0]
+    age = df["Age"][0]
+    print(name, age)
+    return render_template('about.html',
+                            jinja_title = name,
+                            jinja_about = age
+                            )
 
 if __name__ == '__main__':
     app.run(debug=True)
