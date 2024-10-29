@@ -3,4 +3,4 @@
 
 
 
-![SQL jOINS](//images/sql_joins.jpg "joins")
+![SQL jOINS](/images/sql_joins.jpg "joins")
