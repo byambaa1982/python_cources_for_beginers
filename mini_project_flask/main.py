@@ -83,7 +83,7 @@ def test_db():
     return f'Hello from Flask! {name}'
 
 
-# Route for registration
+# Route for registration.
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
