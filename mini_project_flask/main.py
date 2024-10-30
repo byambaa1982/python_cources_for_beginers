@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request
-
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+import hashlib
 import pandas as pd
 import sqlite3
 
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Needed for session management
+
 
 @app.route('/second')
 def hello_world():
@@ -79,6 +81,61 @@ def test_db():
     df = pd.read_sql('SELECT Name, Age FROM titanic', conn)
     name = df["Name"][0]
     return f'Hello from Flask! {name}'
+
+
+# Route for registration
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        hashed_password = hashlib.sha256(password.encode()).hexdigest()
+
+        conn = sqlite3.connect('titanic.sqlite')
+        cursor = conn.cursor()
+        
+        try:
+            cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, hashed_password))
+            conn.commit()
+            flash("Registration successful! Please log in.")
+            return redirect(url_for('login'))
+        except sqlite3.IntegrityError:
+            flash("Username already exists. Please try another one.")
+        finally:
+            conn.close()
+    
+    return render_template('register.html')
+
+# Route for login
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        hashed_password = hashlib.sha256(password.encode()).hexdigest()
+
+        conn = sqlite3.connect('titanic.sqlite')
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, hashed_password))
+        user = cursor.fetchone()
+        conn.close()
+
+        if user:
+            session['username'] = username
+            flash("Login successful!")
+            return redirect(url_for('show_blogs'))
+        else:
+            flash("Invalid username or password.")
+    
+    return render_template('login.html')
+
+# Route to log out
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    flash("Logged out successfully.")
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)
