@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Calculator</h1>
+        <form method="POST">
+            <label for="num1">Enter the first number:</label>
+            <input type="text" id="num1" name="num1" required>
+
+            <label for="num2">Enter the second number:</label>
+            <input type="text" id="num2" name="num2" required>
+
+            <label for="operation">Choose an operation:</label>
+            <select id="operation" name="operation">
+                <option value="+">Addition (+)</option>
+                <option value="-">Subtraction (-)</option>
+                <option value="*">Multiplication (*)</option>
+                <option value="/">Division (/)</option>
+            </select>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result is not none %}
+            <h2>Result: {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
