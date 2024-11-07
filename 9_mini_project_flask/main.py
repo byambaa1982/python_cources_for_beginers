@@ -37,6 +37,7 @@ def about():
                             jinja_title = name,
                             jinja_about = age
                             )
+
 @app.route('/posts', methods=['GET', 'POST'])
 def submit_post():
     message = ""
@@ -59,6 +60,29 @@ def submit_post():
         message = "Post submitted successfully!"
 
     return render_template('form.html', message=message)
+
+@app.route('/me', methods=['GET', 'POST'])
+def about_me():
+    message = ""
+    if request.method == 'POST':
+        name_insert = request.form['name']
+        age_insert = request.form['age']
+        hobby_insert = request.form['hobby']
+        project_insert = request.form['project']
+
+        conn = sqlite3.connect('titanic.sqlite')
+        cursor = conn.cursor()
+
+        # Ensure the me table exists (you might want to modify or remove this part)
+        cursor.execute('''CREATE TABLE IF NOT EXISTS me (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER, hobby TEXT, project TEXT)''')
+
+        # Insert the submitted form data into the me table
+        cursor.execute("INSERT INTO me (name, age, hobby, project) VALUES (?, ?, ?, ?)", (name_insert, age_insert, hobby_insert, project_insert))
+        conn.commit()
+        conn.close()
+
+        message = "Post submitted successfully!"
+    return render_template('grace.html', message=message)
 
 @app.route('/blogs')
 def show_blogs():
