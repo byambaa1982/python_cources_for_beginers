@@ -1,0 +1,22 @@
+{% extends "base_flask.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">WHERE I WORK</h3>
+    <p class="w3-center"><em>I'd love your feedback!</em></p>
+    <form action="/contact" method="POST">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+    </form>
+</div>
+{% endblock %}
