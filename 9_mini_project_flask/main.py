@@ -130,6 +130,40 @@ def register():
     
     return render_template('register.html')
 
+# Route to handle form submission
+@app.route('/submit_contact', methods=['POST'])
+def submit_contact():
+    # Retrieve form data
+    name = request.form.get('name')
+    email = request.form.get('email')
+    message = request.form.get('message')
+
+    # Insert data into the contacts table
+    conn = sqlite3.connect('titanic.sqlite' , check_same_thread=False)
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO contacts (name, email, message)
+        VALUES (?, ?, ?)
+    ''', (name, email, message))
+    conn.commit()
+    conn.close()
+
+    # Redirect to the admin page
+    return redirect('/admin')
+
+# Route to display admin page
+@app.route('/admin')
+def admin():
+    # Retrieve all contact records
+    conn = sqlite3.connect('titanic.sqlite', check_same_thread=False)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM contacts')
+    contacts = cursor.fetchall()
+    conn.close()
+
+    # Render the admin page with contact data
+    return render_template('admin.html', contacts=contacts)
+
 # Route for login
 @app.route('/login', methods=['GET', 'POST'])
 def login():

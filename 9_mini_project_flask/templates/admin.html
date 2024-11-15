@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Contact Submissions</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Submitted At</th>
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact[0] }}</td>
+            <td>{{ contact[1] }}</td>
+            <td>{{ contact[2] }}</td>
+            <td>{{ contact[3] }}</td>
+            <td>{{ contact[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
