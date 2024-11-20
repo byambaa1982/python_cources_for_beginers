@@ -271,6 +271,19 @@
                     box-shadow: 0 0 20px #f00;
                 }
 
+                .editor-container {
+                    margin: 2rem 0;
+                }
+                button {
+                        background-color: var(--primary-color);
+                        color: #fff;
+                        border: none;
+                        padding: 0.5rem 1rem;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        margin-top: 10px;
+                    }
         /* Other CSS rules from your code here */
 
     </style>
@@ -329,7 +342,7 @@
         </div>
         <h1 class="animated-text" data-text="AI-Assisted Coding Practice">AI-Assisted Coding Practice</h1>
 
-        <form action="/submit_code" method="post">
+        <form action="/submit_code" method="post" class="editor-container">
             <textarea id="code" name="code" placeholder="// Write your Python code here">{{ code or '' }}</textarea>
             <button type="submit">Run Code</button>
         </form>
