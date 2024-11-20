@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>AI-Assisted Coding Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Assisted Coding Practice</title>
-    <!-- Fonts and Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
-        /* Main Styles */
         @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
+        
         :root {
             --primary-color: #ff4500;
             --secondary-color: #32cd32;
@@ -18,9 +16,10 @@
             --background-color: #222;
             --container-bg: rgba(0, 50, 70, 0.85);
         }
-
+        
         body {
             font-family: 'Share Tech Mono', monospace;
+            line-height: 1.6;
             color: var(--primary-color);
             background-color: var(--background-color);
             margin: 0;
@@ -33,108 +32,279 @@
             animation: backgroundScroll 20s linear infinite;
         }
 
-        @keyframes backgroundScroll {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 20px; }
-        }
-
         .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: var(--container-bg);
-            box-shadow: 0 0 20px var(--primary-color);
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--primary-color);
-        }
+                    max-width: 900px;
+                    margin: 2rem auto;
+                    padding: 2rem;
+                    background-color: var(--container-bg);
+                    box-shadow: 0 0 20px var(--primary-color);
+                    border-radius: 10px;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid var(--primary-color);
+                }
+                .container::before {
+                    content: "";
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 2px,
+                        rgba(0, 255, 255, 0.1) 2px,
+                        rgba(0, 255, 255, 0.1) 4px
+                    );
+                    animation: scan 10s linear infinite;
+                    pointer-events: none;
+                    z-index: -1;
+                }
+                @keyframes scan {
+                    0% {transform: translateY(0); }
+                    100% {transform: translateY(50%); }
+                }
+                .animated-text {
+                    position: relative;
+                    display: inline-block;
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                    color: var(--secondary-color);
+                    text-shadow: 0 0 10px var(--secondary-color);
+                    margin-bottom: 1rem;
+                    width: 100%;
+                    text-align: center;
+                }
+                .animated-text::before,
+                .animated-text::after {
+                    content: attr(data-text);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }
+                .animated-text::before {
+                    color: var(--accent-color);
+                    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+                }
+                .animated-text::after {
+                    color: var(--primary-color);
+                    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+                }
+                * {
+                    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewport="0 0 24 24" style="fill:rgba(110,68,255,1);transform:rotate(-45deg);"><path d="M12 2L2 22l10-6 10 6L12 2z"/></svg>'), auto;
+                }
+                a, .stat-card, .vulnerable-item, button, input[type="submit"] {
+                    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewport="0 0 24 24" style="fill:rgba(110,68,255,1);transform:rotate(-45deg);"><path d="M12 2L2 22l10-6 10 6L12 2z"/></svg>'), pointer;
+                }
+                a:hover, .stat-card:hover, button:hover, input[type="submit"]:hover {
+                    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewport="0 0 24 24" style="fill:rgba(255,127,80,1);transform:rotate(-45deg);"><path d="M12 2L2 22l10-6 10 6L12 2z"/></svg>'), pointer;
+                    filter: drop-shadow(0 0 6px var(--secondary-color));
+                }
+                .vulnerable-item:hover {
+                    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewport="0 0 24 24" style="fill:rgba(255,0,0,1);transform:rotate(-45deg);"><path d="M12 2L2 22l10-6 10 6L12 2z"/></svg>'), pointer;
+                    filter: drop-shadow(0 0 6px #f00);
+                }
+                @keyframes glitch {
+                    0% {transform: translate(0); }
+                    20% { transform: translate(-2px, 2px); }
+                    40% {transform: translate(-2px, -2px); }
+                    60% { transform: translate(2px, 2px); }
+                    80% { transform: translate(2px, -2px); }
+                    100% { transform: translate(0); }
+                }
+                .logo {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+                .logo svg {
+                    max-width: 300px;
+                    height: auto;
+                }
+                .summary {
+                    background-color: rgba(0, 40, 80, 0.6);
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    margin-bottom: 2rem;
+                    border: 1px solid var(--primary-color);
+                    box-shadow: 0 0 10px var(--primary-color);
+                }
+                .summary-item {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+                    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+                    padding-bottom: 0.5rem;
+                }
+                .summary-label {
+                    font-weight: bold;
+                    color: var(--accent-color);
+                }
+                .summary-value {
+                    color: var(--primary-color);
+                }
+                .progress-bar {
+                    width: 100%;
+                    height: 20px;
+                    background-color: rgba(0, 255, 255, 0.1);
+                    border-radius: 10px;
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                }
+                .progress {
+                    width: {(total_found / total_scanned) * 100}%;
+                    height: 100%;
+                    background-color: var(--secondary-color);
+                    animation: pulse 2s infinite;
+                }
+                @keyframes pulse {
+                    0% { opacity: 0.6; }
+                    50% {opacity: 1; }
+                    100% {opacity: 0.6; }
+                }
+                .stats-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                }
+                .stat-card {
+                    background-color: rgba(0, 40, 80, 0.6);
+                    padding: 1rem;
+                    border-radius: 8px;
+                    text-align: center;
+                    border: 1px solid var(--primary-color);
+                    transition: all 0.3s ease;
+                }
+                .stat-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+                }
+                .stat-value {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    color: var(--accent-color);
+                }
+                .stat-label {
+                    font-size: 0.9rem;
+                    color: var(--primary-color);
+                }
+                .timeline {
+                    position: relative;
+                    max-width: 1200px;
+                    margin: 2rem auto;
+                }
+                .timeline::after {
+                    content: '';
+                    position: absolute;
+                    width: 6px;
+                    background-color: var(--primary-color);
+                    top: 0;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -3px;
+                }
+                .timeline-item {
+                    padding: 10px 40px;
+                    position: relative;
+                    background-color: inherit;
+                    width: 50%;
+                }
+                .timeline-item::after {
+                    content: '';
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    right: -17px;
+                    background-color: var(--background-color);
+                    border: 4px solid var(--accent-color);
+                    top: 15px;
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+                .left {
+                    left: 0;
+                }
+                .right {
+                    left: 50%;
+                }
+                .right::after {
+                    left: -16px;
+                }
+                .timeline-content {
+                    padding: 20px 30px;
+                    background-color: rgba(0, 40, 80, 0.6);
+                    position: relative;
+                    border-radius: 6px;
+                }
+                .vulnerable-item {
+                    background-color: rgba(255, 0, 0, 0.2);
+                    border: 1px solid #f00;
+                    color: #f00;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+                    border-radius: 4px;
+                    word-break: break-all;
+                    box-shadow: 0 0 10px #f00;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+                .vulnerable-item::before {
+                    content: "VULNERABLE";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: #f00;
+                    color: #000;
+                    font-size: 0.7rem;
+                    padding: 0.2rem 0.5rem;
+                    transform: rotate(45deg) translate(25%, -50%);
+                }
+                .vulnerable-item:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0 0 20px #f00;
+                }
 
-        .animated-text {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--secondary-color);
-            text-shadow: 0 0 10px var(--secondary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+        /* Other CSS rules from your code here */
 
-        .editor-container {
-            margin: 2rem 0;
-        }
-
-        textarea {
-            width: 100%;
-            height: 150px;
-            border: 1px solid var(--primary-color);
-            border-radius: 5px;
-            background-color: #111;
-            color: #fff;
-            padding: 10px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1rem;
-        }
-
-        button {
-            background-color: var(--primary-color);
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background-color: var(--accent-color);
-            box-shadow: 0 0 10px var(--accent-color);
-        }
-
-        pre {
-            background-color: #111;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            box-shadow: 0 0 10px var(--primary-color);
-            margin-top: 1rem;
-            max-height: 200px; /* Limit the display height */
-            overflow-y: scroll;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="animated-text" data-text="Coding Practice">Coding Practice</div>
-        <form action="/submit_code" method="post" class="editor-container">
+        <div class="logo">
+            <!-- SVG Logo -->
+        </div>
+        <h1 class="animated-text" data-text="AI-Assisted Coding Practice">AI-Assisted Coding Practice</h1>
+
+        <form action="/submit_code" method="post">
             <textarea id="code" name="code" placeholder="// Write your Python code here">{{ code or '' }}</textarea>
             <button type="submit">Run Code</button>
         </form>
 
-        <!-- Display the result if available -->
         {% if response %}
             <h2>Result:</h2>
             <pre>
-                {{ response['student_code'][:100] + '...' if response['student_code']|length > 100 else response['student_code'] }}
-                {{ response['result'] }}
+        {{ response | tojson(indent=4) }}
             </pre>
         {% endif %}
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
-    <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-            lineNumbers: true,
-            mode: 'python',
-            theme: 'monokai',
-            indentUnit: 4,
-            matchBrackets: true
-        });
-    </script>
-    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+        <script>
+            var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+                lineNumbers: true,
+                mode: 'python',
+                theme: 'monokai',
+                indentUnit: 4,
+                matchBrackets: true
+            });
+        </script>
+    </div>
 </body>
 </html>

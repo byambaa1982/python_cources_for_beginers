@@ -13,9 +13,11 @@ def main():
         <!DOCTYPE html>
         <html lang="en">
         <head>
+             <title>AI-Assisted Coding Practice</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Data Engineering Road</title>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
                 
@@ -338,77 +340,32 @@ def main():
                     </g>
                     </svg>
                 </div>
-                <h1 class="animated-text" data-text="Data Engineer">Data Engineer</h1>
-                <div class="summary">
-                    <div class="summary-item">
-                        <span class="summary-label">Expertise:</span>
-                        <span class="summary-value">{scan_type}</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Experience:</span>
-                        <span class="summary-value">{total_found}</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Total Projects:</span>
-                        <span class="summary-value">{total_scanned}</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Work:</span>
-                        <span class="summary-value">{time_taken} seconds</span>
-                    </div>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress"></div>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value">{total_found}</div>
-                        <div class="stat-label">Vulnerabilities Detected</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">{total_scanned}</div>
-                        <div class="stat-label">URLs Scanned</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">{time_taken}s</div>
-                        <div class="stat-label">Scan Duration</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">{total_found / total_scanned:.2%}</div>
-                        <div class="stat-label">Vulnerability Rate</div>
-                    </div>
-                </div>
-                <h2 class="animated-text" data-text="Road Map">Road Map</h2>
-                <div class="timeline">
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <h3>Scan Initiated</h3>
-                            <p>Type: {scan_type}</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <h3>Scanning Process</h3>
-                            <p>{total_scanned} URLs analyzed</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <h3>Vulnerabilities Detected</h3>
-                            <p>{total_found} vulnerabilities found</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <h3>Scan Completed</h3>
-                            <p>Duration: {time_taken} seconds</p>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="animated-text" data-text="Resouces">Resources</h2>
-                <ul class="vulnerable-list">
-                    {"".join(f'<li class="vulnerable-item"><a href="{url}" target="_blank" style="color: inherit; text-decoration: none;">{url}</a></li>' for url in vulnerable_urls)}
-                </ul>
+                <h1 class="animated-text" data-text="AI-Assisted Coding Practice">AI-Assisted Coding Practice</h1>
+
+                <form action="/submit_code" method="post">
+                    <textarea id="code" name="code" placeholder="// Write your Python code here">{{ code or '' }}</textarea>
+                    <button type="submit">Run Code</button>
+                </form>
+
+                <!-- Display the result if available -->
+                        {{% if response %}}
+                            <h2>Result:</h2>
+                            <pre>
+                    {{ response | tojson(indent=4) }}
+                            </pre>
+                        {{% endif %}}
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+                <script>
+                    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {{
+                        lineNumbers: true,
+                        mode: 'python',
+                        theme: 'monokai',
+                        indentUnit: 4,
+                        matchBrackets: true
+                    }});
+                </script>
             </div>
         </body>
         </html>
