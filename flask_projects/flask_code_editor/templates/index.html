@@ -278,7 +278,54 @@
 <body>
     <div class="container">
         <div class="logo">
-            <!-- SVG Logo -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+            <defs>
+                <linearGradient id="scanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#6E44FF"/>
+                <stop offset="50%" style="stop-color:#1CDCE8"/>
+                <stop offset="100%" style="stop-color:#F77E21"/>
+                </linearGradient>
+                <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FF5F6D"/>
+                <stop offset="50%" style="stop-color:#FFC371"/>
+                <stop offset="100%" style="stop-color:#FF5F6D"/>
+                </linearGradient>
+            </defs>
+
+            <!-- Central Scanner Element -->
+            <g transform="translate(150,100)">
+                <!-- Outer Ring -->
+                <circle r="100" fill="none" stroke="#1CDCE8" stroke-width="4" stroke-dasharray="10 5">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+                </circle>
+
+                
+                <!-- Middle Ring -->
+                <circle r="85" fill="none" stroke="#F77E21" stroke-width="3" stroke-dasharray="8 4">
+                <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Inner Ring -->
+                <circle r="50" fill="none" stroke="#6E44FF" stroke-width="2" stroke-dasharray="6 3">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+
+            <!-- Scanning Beam -->
+            <g transform="translate(150,100)">
+                <path d="M0,0 L-70,0" fill="none" stroke="url(#scanGradient)" stroke-width="4">
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+                </path>
+            </g>
+
+
+
+
+            <!-- Byamba Text -->
+            <g transform="translate(150,100)">
+                <text x="0" y="5" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="url(#textGradient)" text-anchor="middle">BYAMBA</text>
+            </g>
+            </svg>
         </div>
         <h1 class="animated-text" data-text="AI-Assisted Coding Practice">AI-Assisted Coding Practice</h1>
 
