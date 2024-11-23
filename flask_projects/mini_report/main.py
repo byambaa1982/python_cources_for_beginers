@@ -13,20 +13,18 @@ def main():
         <!DOCTYPE html>
         <html lang="en">
         <head>
-             <title>AI-Assisted Coding Practice</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Loxs Security Scan Report</title>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
                 
                 :root {{
-                    --primary-color: #ff4500;   /* A bright orange-red */
-                    --secondary-color: #32cd32; /* A lime green */
-                    --accent-color: #1e90ff;    /* A vivid blue */
-                    --background-color: #222;   /* Dark gray background */
-                    --container-bg: rgba(0, 50, 70, 0.85); /* Deeper container background */
+                    --primary-color: #ff7f50;
+                    --secondary-color: #6e44ff;
+                    --accent-color: #5dc05d;
+                    --background-color: #000;
+                    --container-bg: rgba(0, 20, 40, 0.8);
                 }}
                 
                 body {{
@@ -309,9 +307,8 @@ def main():
                     <g transform="translate(150,100)">
                         <!-- Outer Ring -->
                         <circle r="100" fill="none" stroke="#1CDCE8" stroke-width="4" stroke-dasharray="10 5">
-                            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+                        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
                         </circle>
-
                         
                         <!-- Middle Ring -->
                         <circle r="85" fill="none" stroke="#F77E21" stroke-width="3" stroke-dasharray="8 4">
@@ -326,46 +323,126 @@ def main():
 
                     <!-- Scanning Beam -->
                     <g transform="translate(150,100)">
-                        <path d="M0,0 L-70,0" fill="none" stroke="url(#scanGradient)" stroke-width="4">
-                            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+                        <path d="M0,0 L-70,0 A70,70 0 0,1 -49.5,-49.5" fill="none" stroke="url(#scanGradient)" stroke-width="4">
+                        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
                         </path>
                     </g>
 
+                    <!-- Vulnerability Nodes -->
+                    <g id="vulnerabilityNodes">
+                        <circle cx="150" cy="30" r="5" fill="#FF5F6D">
+                        <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="230" cy="100" r="5" fill="#FFC371">
+                        <animate attributeName="r" values="5;7;5" dur="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="190" cy="170" r="5" fill="#F77E21">
+                        <animate attributeName="r" values="5;7;5" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="110" cy="170" r="5" fill="#1CDCE8">
+                        <animate attributeName="r" values="5;7;5" dur="2.7s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="70" cy="100" r="5" fill="#6E44FF">
+                        <animate attributeName="r" values="5;7;5" dur="2.2s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
 
-    
+                    <!-- Connecting Lines -->
+                    <g stroke="#1CDCE8" stroke-width="1" opacity="0.6">
+                        <line x1="150" y1="30" x2="230" y2="100">
+                        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="230" y1="100" x2="190" y2="170">
+                        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.5s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="190" y1="170" x2="110" y2="170">
+                        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="110" y1="170" x2="70" y2="100">
+                        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.7s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="70" y1="100" x2="150" y2="30">
+                        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.2s" repeatCount="indefinite"/>
+                        </line>
+                    </g>
 
-                    <!-- Byamba Text -->
+                    <!-- LOXS Text -->
                     <g transform="translate(150,100)">
-                        <text x="0" y="5" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="url(#textGradient)" text-anchor="middle">BYAMBA</text>
+                        <text x="0" y="5" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="url(#textGradient)" text-anchor="middle">LOXS</text>
                     </g>
                     </svg>
                 </div>
-                <h1 class="animated-text" data-text="AI-Assisted Coding Practice">AI-Assisted Coding Practice</h1>
-
-                <form action="/submit_code" method="post">
-                    <textarea id="code" name="code" placeholder="// Write your Python code here">{{ code or '' }}</textarea>
-                    <button type="submit">Run Code</button>
-                </form>
-
-                <!-- Display the result if available -->
-                        {{% if response %}}
-                            <h2>Result:</h2>
-                            <pre>
-                    {{ response | tojson(indent=4) }}
-                            </pre>
-                        {{% endif %}}
-
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
-                <script>
-                    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {{
-                        lineNumbers: true,
-                        mode: 'python',
-                        theme: 'monokai',
-                        indentUnit: 4,
-                        matchBrackets: true
-                    }});
-                </script>
+                <h1 class="animated-text" data-text="Pokemon Report Card">Pokemon Report Card</h1>
+                <div class="summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Scan Type:</span>
+                        <span class="summary-value">{scan_type}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Vulnerabilities Found:</span>
+                        <span class="summary-value">{total_found}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total URLs Scanned:</span>
+                        <span class="summary-value">{total_scanned}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Time Taken:</span>
+                        <span class="summary-value">{time_taken} seconds</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">{total_found}</div>
+                        <div class="stat-label">Vulnerabilities Detected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">{total_scanned}</div>
+                        <div class="stat-label">URLs Scanned</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">{time_taken}s</div>
+                        <div class="stat-label">Scan Duration</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">{total_found / total_scanned:.2%}</div>
+                        <div class="stat-label">Vulnerability Rate</div>
+                    </div>
+                </div>
+                <h2 class="animated-text" data-text="Scan Timeline">Scan Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Scan Initiated</h3>
+                            <p>Type: {scan_type}</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Scanning Process</h3>
+                            <p>{total_scanned} URLs analyzed</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Vulnerabilities Detected</h3>
+                            <p>{total_found} vulnerabilities found</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Scan Completed</h3>
+                            <p>Duration: {time_taken} seconds</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="animated-text" data-text="Vulnerable URLs">Vulnerable URLs</h2>
+                <ul class="vulnerable-list">
+                    {"".join(f'<li class="vulnerable-item"><a href="{url}" target="_blank" style="color: inherit; text-decoration: none;">{url}</a></li>' for url in vulnerable_urls)}
+                </ul>
             </div>
         </body>
         </html>
