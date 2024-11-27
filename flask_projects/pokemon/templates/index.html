@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Pokémon Viewer</title>
+</head>
+<body>
+    <h1>Pokémon Sprite Viewer</h1>
+    <form method="POST">
+        <label for="pokemon_name">Select a Pokémon:</label>
+        <select id="pokemon_name" name="pokemon_name">
+            {% for name in pokemon_names %}
+                <option value="{{ name }}" {% if name == selected_pokemon %}selected{% endif %}>{{ name.capitalize() }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">View Sprite</button>
+    </form>
+
+    {% if sprite_path %}
+        <h2>{{ selected_pokemon.capitalize() }}</h2>
+        <img src="{{ sprite_path }}" alt="{{ selected_pokemon }} sprite">
+    {% elif selected_pokemon %}
+        <p style="color: red;">Sprite not available for {{ selected_pokemon }}.</p>
+    {% endif %}
+</body>
+</html>

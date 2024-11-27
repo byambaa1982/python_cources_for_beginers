@@ -349,9 +349,9 @@
 
         {% if response %}
             <h2>Result:</h2>
-            <pre>
-        {{ response | tojson(indent=4) }}
-            </pre>
+
+            <pre><code class="language-python">{{ response | tojson(indent=4) }} </code></pre>
+            
         {% endif %}
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
