@@ -51,6 +51,10 @@
             border-radius: 4px;
         }
     </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </head>
 <body>
     <h1>Python Code Runner</h1>
@@ -62,14 +66,16 @@
     {% if result is not none %}
     <div class="result">
         <h3>Result:</h3>
-        <pre>{{ result }}</pre>
+        <pre>{{ result[0] }}</pre>
+        <pre><code class="language-python">{{result[1]}}</code></pre>
     </div>
     {% endif %}
 
     {% if markdown_code %}
     <div class="student-code">
         <h3>Your Code:</h3>
-        {{ markdown_code | safe }}
+        <!-- {{ markdown_code | safe }} -->
+        <pre><code class="language-python">{{code}}</code></pre>
     </div>
     {% endif %}
 
