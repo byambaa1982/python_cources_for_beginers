@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code Runner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #007bff;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .CodeMirror {
+            height: 250px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .task-info, .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .task-info h3, .result h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        .pre-code {
+            padding: 10px;
+            background-color: #f4f4f9;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Python Code Runner</h1>
+
+    {% if instruction %}
+    <div class="task-info">
+        <h3>Task Information</h3>
+        <p><strong>Task Name:</strong> {{ instruction['task_name'] }}</p>
+        <p><strong>Instructions:</strong> {{ instruction['instruction'] }}</p>
+        <p><strong>Difficulty:</strong> {{ instruction['difficulty'] }}</p>
+    </div>
+    {% else %}
+    <div class="task-info">
+        <h3>Task Information</h3>
+        <p>No task loaded. Click "Show Task" to display the task information.</p>
+    </div>
+    {% endif %}
+
+    <form method="POST">
+        <textarea id="code" name="code">{{ code }}</textarea>
+        <div class="buttons">
+            <button type="submit" name="action" value="show_task">Show Task</button>
+            <button type="submit" name="action" value="run_code">Run Code</button>
+        </div>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Execution Result</h3>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+
+    {% if output %}
+    <div class="result">
+        <h3>Printed Output</h3>
+        <pre>{{ output }}</pre>
+    </div>
+    {% endif %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+            lineNumbers: true,
+            mode: 'python',
+            theme: 'monokai',
+            indentUnit: 4,
+            matchBrackets: true
+        });
+    </script>
+</body>
+</html>

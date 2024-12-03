@@ -1,0 +1,16 @@
+[
+    {
+        "type": "function",
+        "task_name": "sum_of_two_numbers",
+        "instruction": "Create a Python function named 'sum_of_two_numbers' that takes two arguments, both integers, and returns their sum.",
+        "solution_code": "def sum_of_two_numbers(a, b):\n    return a + b",
+        "difficulty": "very easy"
+    },
+    {
+        "type": "list",
+        "task_name": "List Element Sum",
+        "instruction": "Create a list of numbers. Then, calculate the sum of all elements in the list using a loop. Finally, print the calculated sum.",
+        "solution_code": "numbers = [2, 4, 6, 8, 10]\ntotal_sum = 0\nfor number in numbers:\n    total_sum += number\nprint('The sum of the list elements is:', total_sum)",
+        "difficulty": "easy"
+    }
+]

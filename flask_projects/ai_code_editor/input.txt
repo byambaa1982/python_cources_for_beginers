@@ -1,0 +1,382 @@
+Here's an example of a Python task following the requested format:
+
+```json
+{
+  "type": "function",
+  "task_name": "calculate_sum",
+  "instruction": "Create a function called 'calculate_sum' that takes a list of integers as input and returns the sum of the integers.",
+  "solution_code": "def calculate_sum(numbers):\n    return sum(numbers)",
+  "difficulty": "easy"
+}
+```
+Certainly! Here is a simple Python task in the requested format:
+
+```python
+{
+    "type": "list",
+    "task_name": "Reverse a List",
+    "instruction": "Write a Python function that takes a list as input and returns the list with its elements in reverse order.",
+    "solution_code": 
+        """
+def reverse_list(input_list):
+    return input_list[::-1]
+
+# Example usage:
+# my_list = [1, 2, 3, 4, 5]
+# reversed_list = reverse_list(my_list)
+# print(reversed_list)  # Output should be [5, 4, 3, 2, 1]
+        """,
+    "difficulty": "easy"
+}
+```
+Here's a simple Python task in the specified format:
+
+```python
+{
+    "type": "list",
+    "task_name": "sum-of-odd-numbers",
+    "instruction": "Create a function that takes a list of integers and returns the sum of all odd numbers in the list.",
+    "solution_code": """def sum_of_odd_numbers(numbers):
+    return sum(num for num in numbers if num % 2 != 0)""",
+    "difficulty": "easy"
+}
+```
+
+This task involves creating a function that processes a list to sum up only the odd numbers, which provides practice with list iteration and conditionals.
+Here's a simple Python task using the format you provided:
+
+```json
+{
+  "type": "function",
+  "task_name": "greet_user",
+  "instruction": "Create a function named 'greet_user' that takes one parameter 'name'. The function should return a greeting string in the format 'Hello, [name]!' where [name] is the value of the parameter passed to the function.",
+  "solution_code": "def greet_user(name):\n    return f'Hello, {name}!'",
+  "difficulty": "very easy"
+}
+```
+{
+  "type": "function",
+  "task_name": "calculate_square",
+  "instruction": "Write a Python function named `calculate_square` that takes one argument, an integer `n`, and returns the square of that integer. Follow these steps: \n1. Define the function named `calculate_square` with a parameter `n`.\n2. Inside the function, calculate the square of `n` by multiplying `n` by itself.\n3. Return the result of the multiplication.\n4. Test the function with a few examples to ensure it works correctly.",
+  "solution_code": "def calculate_square(n):\n    return n * n\n\n# Testing the function\nprint(calculate_square(3))  # Output should be 9\nprint(calculate_square(5))  # Output should be 25\nprint(calculate_square(-4))  # Output should be 16",
+  "difficulty": "very easy"
+}
+{
+  "type": "variables",
+  "task_name": "Swap Two Variables",
+  "instruction": "1. Create two variables, 'a' and 'b', and initialize them with two different integer values.\n2. Swap the values of 'a' and 'b' without using a third variable.\n3. Print the new values of 'a' and 'b'.",
+  "solution_code": """
+a = 5
+b = 10
+
+# Swap without using a third variable
+a = a + b  # a now becomes 15
+b = a - b  # b now becomes 5
+a = a - b  # a now becomes 10
+
+print("a:", a)
+print("b:", b)
+""",
+  "difficulty": "easy"
+}
+{
+  "type": "dictionary",
+  "task_name": "Create and Access a Dictionary",
+  "instruction": "1. Create a dictionary named 'student_info' that represents a student's details. \n2. The dictionary should contain the student's 'name', 'age', and 'grade'. \n3. The 'name' should be 'John Doe', 'age' should be 20, and 'grade' should be 'A'. \n4. Access the 'grade' from the dictionary and store it in a variable called 'student_grade'. \n5. Print the variable 'student_grade'.",
+  "solution_code": "\n# Step 1: Create the dictionary with student details\nstudent_info = {\n    'name': 'John Doe',\n    'age': 20,\n    'grade': 'A'\n}\n\n# Step 2: Access the grade from the dictionary\nstudent_grade = student_info['grade']\n\n# Step 3: Print the grade\nprint(student_grade)\n",
+  "difficulty": "easy"
+}
+Here's a simple Python task following the specified format:
+
+```python
+{
+    "type": "function",
+    "task_name": "calculate_square",
+    "instruction": "Create a function named `calculate_square` that takes a single integer as input and returns the square of that integer step by step.",
+    "solution_code": "
+def calculate_square(n):
+    # Step 1: Define the function that takes one parameter, n
+    # Step 2: Calculate the square of n
+    square = n * n
+    # Step 3: Return the result
+    return square
+    ",
+    "difficulty": "easy"
+}
+```
+
+This task involves creating a simple function in Python that computes the square of an integer. It's categorized as "easy" because it requires basic understanding of function definition and arithmetic operations in Python.
+{
+"type": "dictionary", 
+"task_name": "create-simple-dictionary",
+"instruction": "Create a simple dictionary containing three key-value pairs. The keys should be 'name', 'age', and 'city', and the corresponding values should be 'Alice', 30, and 'New York'. Use this dictionary to print a sentence about the person, such as 'Alice is 30 years old and lives in New York.'",
+"solution_code": 
+"""
+# Define the dictionary with the required key-value pairs
+person_info = {
+    'name': 'Alice',
+    'age': 30,
+    'city': 'New York'
+}
+
+# Use the dictionary to print out the sentence
+print(f"{person_info['name']} is {person_info['age']} years old and lives in {person_info['city']}.")
+""",
+"difficulty": "easy"
+}
+Here is a simple Python task in the specified format:
+
+```python
+{
+    "type": "function",
+    "task_name": "calculate_sum",
+    "instruction": [
+        "Define a function named 'calculate_sum' that takes two parameters, 'a' and 'b'.",
+        "Inside the function, add the two parameters together.",
+        "Return the result of the addition."
+    ],
+    "solution_code": """
+def calculate_sum(a, b):
+    return a + b
+""",
+    "difficulty": "very easy"
+}
+```
+{
+  "type": "function",
+  "task_name": "create_sqr_function",
+  "instruction": "Step 1: Define a function named 'square' that takes a single argument 'x'.\nStep 2: Inside the function, return the result of 'x' multiplied by itself.\nStep 3: Test the function by calling it with different numbers, such as 2, 5, and 10.",
+  "solution_code": "def square(x):\n    return x * x\n\n# Testing the function\nprint(square(2))  # Should print 4\nprint(square(5))  # Should print 25\nprint(square(10)) # Should print 100",
+  "difficulty": "very easy"
+}
+{
+    "type": "variables",
+    "task_name": "Define and Use Variables",
+    "instruction": "1. Create a variable named 'name' and assign it the value 'Alice'.\n2. Create another variable named 'age' and assign it the value 30.\n3. Print a sentence that says 'Alice is 30 years old.' using the variables 'name' and 'age'.",
+    "solution_code": "name = 'Alice'\nage = 30\nprint(name + ' is ' + str(age) + ' years old.')",
+    "difficulty": "very easy"
+}
+Here's a simple Python task following the specified format:
+
+```json
+{
+  "type": "function",
+  "task_name": "square-a-number",
+  "instruction": [
+    "Define a function named 'square' that takes one argument, 'x'.",
+    "Inside the function, return the square of 'x'.",
+    "A square of a number is the result of multiplying the number by itself.",
+    "Test the function with different numbers to verify it's working correctly."
+  ],
+  "solution_code": [
+    "def square(x):",
+    "    return x * x",
+    "",
+    "# Example usage:",
+    "print(square(2))  # Output should be 4",
+    "print(square(5))  # Output should be 25",
+    "print(square(-3)) # Output should be 9"
+  ],
+  "difficulty": "easy"
+}
+```
+```python
+{
+    "type": "function",
+    "task_name": "calculate_square",
+    "instruction": "Create a Python function named `calculate_square` that takes a number as its parameter and returns its square. Follow these steps:\n1. Define a function `calculate_square` that accepts one parameter, `number`.\n2. Inside the function, calculate the square of `number` by multiplying `number` by itself.\n3. Return the result.\n4. Test the function by calling it with different numbers and printing the results.",
+    "solution_code": "def calculate_square(number):\n    return number * number\n\n# Test cases\nprint(calculate_square(2))  # Output: 4\nprint(calculate_square(-3))  # Output: 9\nprint(calculate_square(0))  # Output: 0\nprint(calculate_square(5))  # Output: 25",
+    "difficulty": "very easy"
+}
+```
+{
+  "type": "function",
+  "task_name": "add_numbers",
+  "instruction": "1. Define a function named 'add_numbers'.\n2. The function should take two parameters, 'a' and 'b'.\n3. Inside the function, return the sum of 'a' and 'b'.",
+  "solution_code": "def add_numbers(a, b):\n    return a + b",
+  "difficulty": "very easy"
+}
+Here is a simple Python task in the specified format:
+
+```python
+{
+    "type": "list",
+    "task_name": "sum_two_lists",
+    "instruction": [
+        "Create two lists named 'list1' and 'list2'.",
+        "Ensure each list contains five integers.",
+        "Initialize an empty list called 'result'.",
+        "Iterate over the lists using a for loop.",
+        "In each iteration, add the elements from 'list1' and 'list2' at the current index.",
+        "Append the sum to the 'result' list.",
+        "After the loop, print the 'result' list to display the sums."
+    ],
+    "solution_code": """
+# Step 1: Create two lists with integers
+list1 = [1, 2, 3, 4, 5]
+list2 = [10, 20, 30, 40, 50]
+
+# Step 2: Initialize an empty result list
+result = []
+
+# Step 3: Iterate over the indices of the lists
+for i in range(len(list1)):
+    # Step 4: Add elements from both lists at index i
+    sum_value = list1[i] + list2[i]
+    
+    # Step 5: Append the sum to the result list
+    result.append(sum_value)
+
+# Step 6: Print the result list
+print(result)  # Output should be [11, 22, 33, 44, 55]
+""",
+    "difficulty": "easy"
+}
+```
+{
+  "type": "list",
+  "task_name": "sum_of_list_elements",
+  "instruction": "Create a Python function that receives a list of numbers and returns the sum of all the elements in the list. Follow these steps:\n1. Define a function named `sum_of_elements` that takes one parameter, a list of numbers called `numbers_list`.\n2. Initialize a variable named `total_sum` to 0.\n3. Loop through each element in `numbers_list` using a for loop.\n4. Inside the loop, add each element to `total_sum`.\n5. After the loop, return `total_sum` as the result.",
+  "solution_code": """
+def sum_of_elements(numbers_list):
+    total_sum = 0
+    for number in numbers_list:
+        total_sum += number
+    return total_sum
+
+# Example usage:
+# result = sum_of_elements([1, 2, 3, 4])
+# print(result)  # Output should be 10
+""",
+  "difficulty": "easy"
+}
+{
+    "type": "function",
+    "task_name": "calculate_factorial",
+    "instruction": "Create a function named 'calculate_factorial' that takes a single integer parameter 'n'. The function should return the factorial of 'n'. The factorial of a non-negative integer 'n' is the product of all positive integers less than or equal to 'n'. For example, the factorial of 5 is 5*4*3*2*1 = 120.",
+    "solution_code": """
+def calculate_factorial(n):
+    if n < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    if n == 0 or n == 1:
+        return 1
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+    """,
+    "difficulty": "easy"
+}
+Here's a simple Python task in the desired format:
+
+```json
+{
+    "type": "list",
+    "task_name": "Create and modify a list",
+    "instruction": "1. Create a list named 'fruits' containing 'apple', 'banana', and 'cherry'.\n2. Append 'orange' to the list.\n3. Remove 'banana' from the list.\n4. Insert 'blueberry' at the second position.\n5. Print the final list.",
+    "solution_code": "fruits = ['apple', 'banana', 'cherry']\nfruits.append('orange')\nfruits.remove('banana')\nfruits.insert(1, 'blueberry')\nprint(fruits)",
+    "difficulty": "easy"
+}
+```
+{
+"type": "list",
+"task_name": "Create and Reverse a List",
+"instruction": "1. Create a list named 'fruits' containing the names of four fruits: 'apple', 'banana', 'mango', 'grape'.\n2. Reverse the order of the elements in the list.\n3. Print the reversed list.",
+"solution_code": "fruits = ['apple', 'banana', 'mango', 'grape']\nfruits.reverse()\nprint(fruits)",
+"difficulty": "easy"
+}
+{
+  "type": "list",
+  "task_name": "find-max-in-list",
+  "instruction": "Create a Python function that takes a list of numbers as input and returns the maximum value in the list. You'll need to iterate over the list to compare values.",
+  "solution_code": """
+def find_max_in_list(numbers):
+    # Step 1: Initialize a variable max_number with the first element in the list
+    max_number = numbers[0]
+    
+    # Step 2: Iterate over the rest of the numbers in the list
+    for number in numbers:
+        # Step 3: If the current number is greater than max_number, update max_number
+        if number > max_number:
+            max_number = number
+    
+    # Step 4: Return the max_number
+    return max_number
+
+# Example usage
+numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+print(find_max_in_list(numbers))  # Output: 9
+  """,
+  "difficulty": "easy"
+}
+Here is a task of type "list" in the specified format:
+
+```json
+{
+  "type": "list",
+  "task_name": "Create a List of Even Numbers",
+  "instruction": "1. Create a Python list named `even_numbers`. \n2. Populate the list with the first five even numbers starting from 2. \n3. Print the list to verify the content.",
+  "solution_code": "even_numbers = [2, 4, 6, 8, 10]\nprint(even_numbers)",
+  "difficulty": "very easy"
+}
+```
+{
+    "type": "function",
+    "task_name": "calculate_factorial",
+    "instruction": "Create a Python function called 'calculate_factorial' that takes a single integer parameter 'n' and returns the factorial of that number. The factorial of a number n is the product of all positive integers less than or equal to n. You'll need to use a loop to calculate the factorial, and remember to handle the case where n = 0, which should return 1.",
+    "solution_code": "def calculate_factorial(n):\n    if n == 0:\n        return 1\n    factorial = 1\n    for i in range(1, n + 1):\n        factorial *= i\n    return factorial",
+    "difficulty": "easy"
+}
+{
+    "type": "list",
+    "task_name": "List Manipulation Basics",
+    "instruction": [
+        "Create a list named 'numbers' with the values [1, 2, 3, 4, 5].",
+        "Add the number 6 to the end of the list.",
+        "Remove the number 3 from the list.",
+        "Insert the number 0 at the beginning of the list.",
+        "Change the last number in the list to 7.",
+        "Print the final list."
+    ],
+    "solution_code": "numbers = [1, 2, 3, 4, 5]\nnumbers.append(6)\nnumbers.remove(3)\nnumbers.insert(0, 0)\nnumbers[-1] = 7\nprint(numbers)",
+    "difficulty": "easy"
+}
+Certainly! Here's a simple Python task focused on basic list manipulation:
+
+```json
+{
+    "type": "list",
+    "task_name": "combine_lists_and_sort",
+    "instruction": "You will be given two lists of integers. Your task is to combine them into a single list, sort the combined list in ascending order, and return the sorted list.",
+    "solution_code": "def combine_lists_and_sort(list1, list2):\n    combined_list = list1 + list2\n    combined_list.sort()\n    return combined_list\n\n# Example usage:\n# list1 = [3, 1, 4]\n# list2 = [5, 2, 6]\n# The function should return [1, 2, 3, 4, 5, 6].",
+    "difficulty": "easy"
+}
+```
+{
+    "type": "function",
+    "task_name": "calculate_factorial",
+    "instruction": "Create a function named `calculate_factorial` that takes a non-negative integer as input and returns its factorial. The factorial of a number n is the product of all positive integers less than or equal to n and is denoted as n!. For instance, 5! is 5 * 4 * 3 * 2 * 1, which is 120.",
+    "solution_code": "def calculate_factorial(n):\n    if n == 0:\n        return 1\n    factorial = 1\n    for i in range(1, n + 1):\n        factorial *= i\n    return factorial",
+    "difficulty": "easy"
+}
+{
+    "type": "function",
+    "task_name": "calculate_square_of_number",
+    "instruction": "Create a Python function named 'calculate_square' that takes a single integer as an argument and returns the square of that integer.",
+    "solution_code": "def calculate_square(number):\n    return number ** 2\n\n# Example usage:\nresult = calculate_square(5)\nprint(result)  # Output: 25",
+    "difficulty": "very easy"
+}
+{
+    "type": "function",
+    "task_name": "sum_of_two_numbers",
+    "instruction": "Create a Python function named 'sum_of_two_numbers' that takes two arguments, both integers, and returns their sum.",
+    "solution_code": "def sum_of_two_numbers(a, b):\n    return a + b",
+    "difficulty": "very easy"
+}
+{
+    "type": "list",
+    "task_name": "List Element Sum",
+    "instruction": "Create a list of numbers. Then, calculate the sum of all elements in the list using a loop. Finally, print the calculated sum.",
+    "solution_code": "numbers = [2, 4, 6, 8, 10]\ntotal_sum = 0\nfor number in numbers:\n    total_sum += number\nprint('The sum of the list elements is:', total_sum)",
+    "difficulty": "easy"
+}
