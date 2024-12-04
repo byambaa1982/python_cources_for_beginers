@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
     <title>Pokémon Viewer</title>
 </head>
 <body>
@@ -19,11 +18,11 @@
         <button type="submit">View Sprite</button>
     </form>
 
-    {% if sprite_path %}
+    {% if sprite_url %}
         <h2>{{ selected_pokemon.capitalize() }}</h2>
-        <img src="{{ sprite_path }}" alt="{{ selected_pokemon }} sprite">
+        <img src="{{ sprite_url }}" alt="{{ selected_pokemon }} sprite">
     {% elif selected_pokemon %}
-        <p style="color: red;">Sprite not available for {{ selected_pokemon }}.</p>
+        <p style="color: red;">Sprite not available for {{ selected_pokemon.capitalize() }}.</p>
     {% endif %}
 </body>
 </html>
