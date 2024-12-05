@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Developer Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            margin: 20px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+        .bio {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .projects a {
+            display: block;
+            margin: 5px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .projects a:hover {
+            text-decoration: underline;
+        }
+        .github a {
+            margin-top: 20px;
+            display: inline-block;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .github a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename=profile.profile_pic) }}" alt="Profile Picture" class="profile-pic">
+        <h1>{{ profile.name }}</h1>
+        <p class="bio">{{ profile.bio }}</p>
+        <div class="projects">
+            <h3>Projects:</h3>
+            {% for project in profile.projects %}
+                <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>
+            {% endfor %}
+        </div>
+        <div class="github">
+            <a href="{{ profile.github }}" target="_blank">Visit My GitHub</a>
+        </div>
+    </div>
+</body>
+</html>

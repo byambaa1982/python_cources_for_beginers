@@ -30,7 +30,7 @@ def index():
     sprite_url = None
 
     if request.method == "POST":
-        selected_pokemon = request.form.get("pokemon_name").lower()
+        selected_pokemon = request.form.get("pokemon_name")
         sprite_url = fetch_pokemon_sprite(selected_pokemon)
 
     return render_template(
